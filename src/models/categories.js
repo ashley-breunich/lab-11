@@ -8,6 +8,10 @@ class Categories {
     let query = { _id:id };
     return this.find(query);
   }
+  static schema() {
+    return typeof this.schema.jsonSchema === 'function' ?
+      this.schema.jsonSchema() : {};
+  }
 
   static find(query) {
     return storage.find(query);
