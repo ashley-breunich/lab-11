@@ -3,7 +3,6 @@
 import express from 'express';
 
 import modelFinder from '../middleware/model-finder.js';
-import { notStrictEqual } from 'assert';
 
 const router = express.Router();
 
@@ -40,16 +39,13 @@ router.get('/api/v1/:model/:id', (request,response,next) => {
 });
 
 router.post('/api/v1/:model', (request,response,next) => {
-  //this let post may not be correct - look into this further...
-  let post = new request.model(request.body);
-  console.log(post);
-  request.model.save()
+  request.model.save(request.body)
     .then(result => sendJSON(result, response))
     .catch(next);
 });
 
 router.put('/api/v1/:model/:id', (request,response,next) => {
-  request.model.save(request.params.id, request.body)
+  request.model.put(request.params.id, request.body)
     .then( result => sendJSON(result, response) )
     .catch( next );
 });

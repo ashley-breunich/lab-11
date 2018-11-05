@@ -1,6 +1,9 @@
 'use strict';
 
-import storage from '../lib/storage/storage.js';
+import Storage from '../lib/storage/storage.js';
+import schema from './mongo/categories.js';
+
+const storage = new Storage(schema);
 
 class Categories {
 
