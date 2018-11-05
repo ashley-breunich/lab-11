@@ -1,8 +1,11 @@
 'use strict';
 
-import storage from '../lib/storage/storage.js';
+import Storage from '../lib/storage/storage.js';
+import schema from './mongo/products.js';
 
-class Products{
+const storage = new Storage(schema);
+
+class Products {
 
   static findOne(id) {
     let query = { _id:id };

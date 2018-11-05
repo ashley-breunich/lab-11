@@ -1,8 +1,10 @@
 'use strict';
 
-import requireAll from 'require-dir';
+// import requireAll from 'require-dir';
 
-const models = requireAll('../models');
+// const models = requireAll('../models');
+const models = { products: require('../models/products.js'), categories: require('../models/categories.js')};
+
 
 /*
 {

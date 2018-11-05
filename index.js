@@ -1,9 +1,10 @@
 'use strict';
 
-require('dotenv').config();
+// This file connets to Mongo directly; this will be what we are testing against. 
 
 // Turn us into ES6!!
 require('babel-register');
+require('dotenv').config();
 
 // Start up DB Server
 const mongoose = require('mongoose');
